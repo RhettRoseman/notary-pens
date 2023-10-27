@@ -2,15 +2,28 @@
 const express = require('express');
 
 // Require the JSON file and assign it to a variable called `termData`
-const termData = require('./terms.json');
+
 const PORT = 3001;
 
 // Initialize our app variable by setting it to the value of express()
 const app = express();
 
+app.use(express.json())
+
+app.use(express.static('public')); 
+
 app.get('/notes', (req, res) => {
-  res.sendFile('/public/notes.html');
+  res.sendFile(__dirname + 'public/notes.html');
 });
+
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
+
+// app.listen(PORT, () => {
+//   console.log(`Server is running on http://localhost:${PORT}`);
+// });
 
 app.get('/index', (req, res) => res.json(termData));
 
