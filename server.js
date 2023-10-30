@@ -3,6 +3,8 @@ const express = require('express');
 
 // Require the JSON file and assign it to a variable called `termData`
 
+const path = require('path');
+
 const PORT = 3001;
 
 // Initialize our app variable by setting it to the value of express()
@@ -12,12 +14,17 @@ app.use(express.json())
 
 app.use(express.static('public')); 
 
-app.get('/notes', (req, res) => {
-  res.sendFile(__dirname + 'public/notes.html');
+
+
+
+app.get('/notes', (req, res) =>  {
+  console.log("bobo the hobo")
+  res.sendFile(path.join(__dirname + '/public/notes.html'));
 });
 
+
 app.get('*', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 
