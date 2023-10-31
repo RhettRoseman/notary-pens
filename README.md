@@ -14,7 +14,7 @@ THEN you will be shown the note page and will be able to take notes
 `` npm i ``
 
 ## Links 
-https://github.com/RhettRoseman
+https://github.com/RhettRoseman/notary-pens
 
 
 ## Author
