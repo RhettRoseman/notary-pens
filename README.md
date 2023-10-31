@@ -19,3 +19,7 @@ https://github.com/RhettRoseman/notary-pens
 
 ## Author
 Rhett Roseman
+
+
+## Notes
+source code file folders db, public,
